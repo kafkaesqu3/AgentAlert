@@ -16,12 +16,15 @@ gmail_password=""
 
 if os.path.exists("empire_key"):
     with open("empire_key") as key:
-        empire_apikey = key.read
+        print("[*] Found empire api key in file")
+        empire_apikey = key.read().rstrip('\n')
     key.close
 
 if os.path.exists("gmail_password"):
     with open("gmail_password") as password:
-        gmail_password = password.read
+        print("[*] Found gmail password in file")
+        gmail_password = password.read().rstrip('\n')
+
 
 subject = "New agent"
 current_agents = []
